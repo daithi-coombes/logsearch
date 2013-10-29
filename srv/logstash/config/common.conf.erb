@@ -13,6 +13,11 @@ filter {
         negate => true
     }
 
+    grep {
+        type => "flowdock"
+        add_tag => "InstructionProcessor"
+    }
+
     #
     # trim excessively long messages
     #
