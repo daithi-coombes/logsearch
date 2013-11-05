@@ -187,4 +187,10 @@ filter {
         source => "Info"
         target => "data"
     }
+
+    json {
+        type => "flowdock-bot"
+        source => "@message"
+        target => "data"
+    }
 }
