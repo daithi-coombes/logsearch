@@ -9,14 +9,14 @@ input {
 }
 
 filter {
-    if [_logstash_input] == "lumberjack" {
+    <% if [_logstash_input] == "lumberjack" %>
         mutate {
             add_field => [ "@source.host", "%{host}" ]
             add_field => [ "@source.path", "%{file}" ]
             add_field => [ "@source.offset", "%{offset}" ]
             remove_field => [ "host", "file", "offset", "_logstash_input" ]
         }
-    }
+    <% end %>
 }
         
 
